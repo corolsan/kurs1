@@ -54,7 +54,7 @@ namespace ConsoleApplication1
                         break;
                 }
             }
-            Console.ReadKey();
+            Console.ReadKey();//стоп
         }
     }
     class Presentor
@@ -119,14 +119,14 @@ namespace ConsoleApplication1
             k--;
 
         }
-        public void Variant()//сортирует по возрастанию четные элементы
+        public void Variant()//сортирует по возрастанию все элементы(изменино)
         {
-            for (int i = 2; i < arr.Length - 1; i += 2)
+            for (int i = 1; i < arr.Length - 1; i += 1)
             {
                 for (int j = i + 1; j < arr.Length; j++)
                 {
                    
-                    if (j % 2 == 0 && arr[i] > arr[j])
+                    if (j % 1 == 0 && arr[i] > arr[j])
                     {
                         int temp = arr[i];
                         arr[i] = arr[j];
