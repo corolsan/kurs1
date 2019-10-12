@@ -19,7 +19,8 @@ namespace ConsoleApplication1
 			Console.WriteLine("1 - dobavit");
 			Console.WriteLine("2 - ydalenie");
 			Console.WriteLine("3 - vivesti massiv");
-			Console.WriteLine("4 - zadanie");
+			Console.WriteLine("4 - zadanie1");
+			Console.WriteLine("5 - zadanie2");
 
 			Presentor zadanie = new Presentor();
 
@@ -47,7 +48,10 @@ namespace ConsoleApplication1
 						zadanie.GetInfo();
 						break;
 					case 4:
-						zadanie.Variant();
+						zadanie.Variant1();
+						break;
+					case 5:
+						zadanie.Variant2();
 						break;
 					default:
 						Console.WriteLine("ohibka, vi visli za predel vozmoznostey programmi");
@@ -119,7 +123,7 @@ namespace ConsoleApplication1
 			k--;
 
 		}
-		public void Variant()//сортирует по возрастанию все элементы(изменино)
+		public void Variant1()//сортирует по возрастанию все элементы(изменино)
 		{
 			for (int i = 1; i < arr.Length - 1; i += 1)
 			{
@@ -137,6 +141,38 @@ namespace ConsoleApplication1
 
 
 		}
+        public void Variant2()
+		{
+			int y = 0;
+			for (int r=0; r< arr.Length ;r++)
+			{
+              if (arr[r] % 2 ==0)
+				{
+					int[] brr = new int[k - 1];
+
+					for (int i = 0; i < r; i++)
+					{
+						brr[i] = arr[i];
+					}
+
+					for (int i = (r + 1); i < brr.Length; i++)
+					{
+						brr[i] = arr[i];
+					}
+
+					arr = new int[k - 1];
+
+					for (int i = 0; i < arr.Length; i++)
+					{
+						arr[i] = brr[i];
+					}
+
+					k--;
+					break;
+				}
+			}
+		}
+
 
 
 
